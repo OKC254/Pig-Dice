@@ -25,8 +25,8 @@ body{
   }
   .head {
     margin-bottom: 100px;
-    color: white;
-    background-color:  rgb(16, 60, 204);
+    color: rgb(16, 60, 204);
+    background-color: transparent;
     
   }
   .dice-image {
@@ -76,7 +76,4 @@ body{
     background-color:  rgba(15, 185, 38, 0.877);
     color: white;
     font-size: 1.5em;
-  }
-  .jumbotron head {
-      background-color: transparent;
   }
