@@ -73,11 +73,11 @@ To view the page click on the link below
 
 ## Technology used ##
 
-* Hyper Text Markup
-* Cascading Style Sheets
+* HTML
+* CSS
 * Bootstrap
 * Javascript
-* Jquery Library
+* Jquery
 
 ## Known Bugs ##
 
