@@ -83,9 +83,5 @@ To view the page click on the link below
 
 There are no known bugs. If you find any be sure to create an issue and I will respond to it.
 
-## Contributing ##
-pull requests are encouraged
-
-
 ## License ##
 This project is licensed under the MIT Open Source license, (c) Oscar Kiplimo
