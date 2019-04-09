@@ -38,3 +38,45 @@ body{
     height: 350px;
     color: white;
   }
+  .player1-level{
+    font-size: 18px;
+    color: white;
+  }
+  .wingame,.gamestats {
+    background-color: rgb(16, 60, 204);
+    color: white;
+    font-weight: 10;
+    font-size: 28px;
+  }
+  #panel-p1,#panel-p2{
+    background-color: #00445b;
+    opacity: .9;
+  }
+  #panel-p1,#panel-p2{
+    color:lightblue;
+    font-weight: 10px;
+    font-size: 30px;
+  }
+  .panel-body {
+   word-wrap: break-word; 
+   padding-bottom: 80px;
+  }
+  
+  .game-window{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  
+  }
+  .game-options{
+    padding-bottom: 10px;
+  }
+
+  .footer {
+    margin-top: 50px;
+    background-color:  rgba(15, 185, 38, 0.877);
+    color: white;
+    font-size: 1.5em;
+  }
+  .jumbotron head {
+      background-color: transparent;
+  }
