@@ -23,3 +23,10 @@ body{
     background-color: grey;
     opacity: .9;
   }
+  .head {
+    margin-bottom: 100px;
+    color: white;
+    background-color:  rgb(16, 60, 204);
+    
+  }
+  
