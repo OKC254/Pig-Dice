@@ -1,65 +1,132 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Game</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/styles1.css">
-    <script src="js/jquery-3.1.1.js"></script>
-    <script src="js/scripts.js"></script>
-</head>
-<body>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles1.css" rel="stylesheet" type="text/css">
+    <title>Pig Dice</title>
+  </head>
+
+  <body>
     <div class="container">
-        <div class="row">
-          <div class="col-md-12" id="header">
-            <h1><img src="img/dice.png" alt="A picture of dice">Pig Dice!<img src="img/dice.png" alt="A picture of dice"></h1>
-            <p id="oneDie">Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "bank". If the player rolls a 1, they score nothing and it becomes the next player's turn. If the player rolls any other number, it is added to their turn total and the player's turn continues. If a player chooses to "bank", their turn total is added to their score, and it becomes the next player's turn. <br><br>The first player to score 100 or more points wins.</p>
-            <p id="twoDice">This variation is the same as Pig except two standard dice are rolled. If neither shows a 1, their sum is added to the turn total. If a single 1 is rolled, the player scores nothing and the turn ends. If two 1s are rolled, the player’s entire score is lost, and the turn ends.<br><br>The first player to score 100 or more points wins.</p>
-            <div id="gameStart">
-              <select id="gameType" class="form-control">
-                <option value="1">One die game</option>
-                <option value="2">Two dice game</option>
-              </select>
-              <select id="playerCount" class="form-control">
-                <option value="1">One player game (Human vs Computer - Easy Mode)</option>
-                <option value="3">One player game (Human vs Computer - Hard Mode)</option>
-                <option value="2">Two player game (Human vs Human)</option>      
-              </select>
-  
-              <button id="startGame" class="btn btn-lg">Begin a new game!</button>
+      <div class="jumbotron head">
+        <h1>Pig Dice Game</h1>
+      </div>
+    </div>
+
+    <!-- initial-screen section -->
+    <div class="container initial-screen">
+      <div class="row">        
+        <div class="col-md-6">
+          <img src="images/dice.png" alt="2 players" class="img-responsive center-block"/>
+          <button type="button" class="btn btn-danger btn-lg btn-block" id="twoPlayer">2 Players</button>
+        </div>      
+        <div class="col-md-6">
+          <img src="images/dice.png" alt="1 player" class="img-responsive center-block"/>
+          <button type="button" class="btn btn-danger btn-lg btn-block" id="onePlayer">1 Player</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- player(s) registration section-->
+    <div class="container players-reg"> 
+      <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+          <form id="form_players">
+            <div class="form-group">
+              <input type="text" id="player_one" placeholder="player one name" class="form-control">
             </div>
+            <div class="form-group playerTwo">
+              <input type="text" id="player_two"  placeholder="player two name"class="form-control">
+            </div>
+            <div class="radio player1-level">
+              <label>
+                <input class="radio-inline" checked="checked" type="radio" name="level" value="recruit">
+              Recruit</label>
+              <label>
+                <input class="radio-inline" type="radio" name="level" value="veteran">
+              Veteran</label> 
+            </div>
+            <div class="form-group winscore">
+              <input type="number" placeholder="Win score" id="winscore" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-danger btn-lg btn-block">Game On!</button>
+          </form>
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+
+    </div>
+
+    <!-- game section-->
+    <div class="container game-section"> 
+      <div class="wingame alert alert-success alert-dismissible">
+      </div>
+      <div class="panel panel-success gamestats">
+      </div>
+      <div class="row game-options">
+        <div class="col-md-6 restartgame">
+          <button type='button' class='btn btn-danger btn-lg btn-block' id='restartgame'>Restart Game</button>
+        </div>      
+        <div class="col-md-6 newgame">
+          <button type='button' onClick="window.location.reload()" class='btn btn-danger btn-lg btn-block' id='homescreen'>Home Screen</button>
+        </div>
+      </div>
+
+      <div class="row game-window">
+        <div class="col-md-6">
+          <div class="panel panel-default" id="panel-p1"> 
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-8">
+                  <h1><span class="player1name"></span></h1>
+                  <button type="button" id="p1roll" class="btn btn-danger">Roll</button>
+                  <button type="button" id="p1hold"class="btn btn-danger">Hold</button>
+                  <div class="playerinfo">
+                    <h4 class="" id="player-1-roll"></h4>
+                    <h4 class="" id="player-1-session"></h4>
+                    <h3 class="" id="player-1-score"></h3>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <h2>Rolls</h2>
+                  <ul class="rolledNum1"></ul>
+                </div>
+              </div>
+
+              </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-4" id="player1Working">
-            <div class="form-group nameEntry1">
-              <label for="p1Name">Enter name for Player 1:</label>
-              <input id="p1Name" type="text" class="form-control">
-              <button id="p1NameSubmit" class="btn btn-lg">Submit</button>
+      
+        <div class="col-md-6">
+          <div class="panel panel-default panel-disable" id="panel-p2"> 
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-8">
+                  <h1><span class="player2name"></span></h1>
+                  <button type="button" id="p2roll" class="btn btn-danger">Roll</button>
+                  <button type="button" id="p2hold"class="btn btn-danger">Hold</button>
+                  <div class="playerinfo">
+                    <h4 class="" id="player-2-roll"></h4>
+                    <h4 class="" id="player-2-session"></h4>
+                    <h3 class="" id="player-2-score"></h3>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <h2>Rolls</h2>
+                  <ul class="rolledNum2"></ul>
+                </div>
+              </div>
             </div>
-            <h4><span id="p1NameOutput">Player 1</span>'s Bank total:<span id="p1BankTotal"></span></h4>
-          </div>
-          <div class="col-md-4" id="gameScore">
-            <!--<h4>Dice roll:<span id="rollOutput"></span></h4>-->
-            <div class="displayDice1"></div>
-            <div class="displayDice2"></div>
-            <h4>Turn total:<span id="turnTotal"></span></h4>
-            <h4>Current Player:<span id="currentPlayer"></span></h4>
-            <button id="rollButton" class="btn btn-lg">Roll the die</button>
-            <button id="bankButton" class="btn btn-lg">Bank</button>
-            <h3 id="winner"></h3>
-          </div>
-          <div class="col-md-4" id="player2Working">
-            <div class="form-group nameEntry2">
-              <label for="p2Name">Enter name for Player 2:</label>
-              <input id="p2Name" type="text" class="form-control">
-              <button id="p2NameSubmit" class="btn btn-lg">Submit</button>
-            </div>
-            <h4><span id="p2NameOutput">Player 2</span>'s Bank total:<span id="p2BankTotal"></span></h4>
           </div>
         </div>
       </div>
-</body>
+    </div> 
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
 </html>
