@@ -3,4 +3,6 @@ body{
     background-color: #ce1010;
     background: url('../images/pix.jpg')
   }
-  
+  .players-reg, .game-section, .results-screen,.wingame,.gamestats {
+    display: none;
+  }
