@@ -34,3 +34,7 @@ body{
     margin-top: 25px;  
     border: 1px black solid;
   }
+  #panel-p2, #panel-p1 {
+    height: 350px;
+    color: white;
+  }
