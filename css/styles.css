@@ -17,3 +17,17 @@ body, html {
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
+.pimg {
+    background: url('../images/dice.jpg');
+    min-height: 100%;
+    position: relative;
+    opacity: 0.70;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.section {
+    text-align: center;
+    padding: 50px 80px;
+}
