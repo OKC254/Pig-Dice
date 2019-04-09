@@ -20,6 +20,7 @@ A player can also chose to compete against the computer
 
 ## Setup/Installation ##
 * Git clone https://github.com/OKC254/Pig-Dice.git or download and unzip the repository from github.
+
  `git clone https://github.com/OKC254/Pig-Dice.git`
 * Open index.html via your web browser.
 
