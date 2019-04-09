@@ -6,3 +6,8 @@ body{
   .players-reg, .game-section, .results-screen,.wingame,.gamestats {
     display: none;
   }
+  .btn-danger {
+    margin-top: 10px;
+    background-color: rgb(16, 60, 204);
+  }
+  
